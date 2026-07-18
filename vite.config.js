@@ -2,10 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-export default defineConfig({
-  base: "/portafolio/",
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" ? "/portafolio/" : "/",
   plugins: [
     react(),
     tailwindcss(),
   ],
-});
+}));
